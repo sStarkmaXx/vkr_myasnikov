@@ -1,0 +1,11 @@
+a{
+  text-decoration: none;
+  color:darkslategrey;
+}
+a.activeLink{
+  color: chocolate;
+}
+a:hover {
+  text-decoration: none;
+  color: burlywood;
+}
