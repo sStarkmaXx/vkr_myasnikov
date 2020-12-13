@@ -5,6 +5,25 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
+let appliances = [
+  { id: 1, name: "Микроволновая печь Samsung", img: "https://c.dns-shop.ru/thumb/st4/fit/320/250/2d6b5445d466d9ed8ba5642ddc694f36/876436145c50b0cf0f3d807c5b2884b62ff9de46108be4812315b0d78e7de57d.jpg", price: "10325" }
+];
+let tv = [
+  { id: 1, name: "Телевизор LED Sony KD-75ZH8 темно-серый", img: "https://c.dns-shop.ru/thumb/st1/fit/320/250/c6b35fdbb4032ed6ab2fe2b329e71777/27ad6823286f42f5ba1d480098e247e2f28360636ccf1991c2dc1a44e84e485c.jpg", price: "601249" }
+];
+let office = [
+  { id: 1, name: "Office", img: "https://c.dns-shop.ru/original/st1/4d16864a51b409372ff2e554f70aea99/4b019c487d703173038d4f39882932a48215814eb1e286243678f8a337587b9d.jpg", price: "65456" }
+];
+let accessories = [
+  { id: 1, name: "accessories", img: "https://c.dns-shop.ru/original/st1/4d16864a51b409372ff2e554f70aea99/4b019c487d703173038d4f39882932a48215814eb1e286243678f8a337587b9d.jpg", price: "65456" }
+];
+let cargoods = [
+  { id: 1, name: "cargoods", img: "https://c.dns-shop.ru/original/st1/4d16864a51b409372ff2e554f70aea99/4b019c487d703173038d4f39882932a48215814eb1e286243678f8a337587b9d.jpg", price: "65456" }
+];
+let tools = [
+  { id: 1, name: "tools", img: "https://c.dns-shop.ru/original/st1/4d16864a51b409372ff2e554f70aea99/4b019c487d703173038d4f39882932a48215814eb1e286243678f8a337587b9d.jpg", price: "65456" }
+];
+
 let smartphones = [
   { id: 1, name: "Samsung", img: "https://c.dns-shop.ru/original/st1/4d16864a51b409372ff2e554f70aea99/4b019c487d703173038d4f39882932a48215814eb1e286243678f8a337587b9d.jpg", price: "31999" },
   { id: 2, name: "Iphone", img: "https://c.dns-shop.ru/thumb/st1/fit/0/0/e65262ea3fddec2515058af9f59de60f/c42fd815f01316f4da0f2266e0906e7961e45f46dbcdc7062836dbdb2facbfcd.jpg", price: "39999" },
@@ -21,14 +40,14 @@ let computers = [
   { id: 4, name: "HP", img: "https://c.dns-shop.ru/thumb/st4/fit/0/0/4e7643eab2edf815844abb2759c4e9bd/7858db8b40ff253129d04e50f75edc0106a0a01835da65733cdbca58dd3a78a7.jpg", price: "43999" },
   { id: 5, name: "Asus", img: "https://c.dns-shop.ru/thumb/st1/fit/wm/1015/668/f32490cf5acc24d7af8befea4dc0bf69/18bb9a69a51beda21a9c7749b0ca7dee3d318ac6afdce19164f3da3152a207d0.jpg", price: "38999" }
 ];
-let catalog = [{ id: "appliances", name: "Бытовая техника", items: ["ст.машины", "чайники", "пылесосы", "холодильники",] },
+let catalog = [{ id: "appliances", name: "Бытовая техника", items: appliances },
 { id: "smartphones", name: "Смартфоны", items: smartphones },
-{ id: "tv", name: "ТВ", items: [] },
+{ id: "tv", name: "ТВ", items: tv },
 { id: "computers", name: "Компьютеры", items: computers },
-{ id: "office", name: "Офис", items: [] },
-{ id: "accessories", name: "Аксессуары", items: [1, 2, 3] },
-{ id: "cargoods", name: "Автотовары", items: [] },
-{ id: "tools", name: "Инструменты", items: [] },
+{ id: "office", name: "Офис", items: office },
+{ id: "accessories", name: "Аксессуары", items: accessories },
+{ id: "cargoods", name: "Автотовары", items: cargoods },
+{ id: "tools", name: "Инструменты", items: tools },
 ];
 
 

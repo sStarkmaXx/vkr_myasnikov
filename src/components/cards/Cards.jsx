@@ -4,7 +4,7 @@ import classes from './Cards.module.css';
 
 
 const Cards = (props) => {
-  let cardElements = props.items[1].items.map(item => {
+  let cardElements = props.items.map(item => {
     return (
       <Card style={{ width: 200 }}>
         <Card.Img variant="top" src={item.img} />

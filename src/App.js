@@ -4,11 +4,17 @@ import Header from './components/Header/Header';
 import LeftNavBar from './components/NavBar/LeftNavBar';
 import { BrowserRouter, Route } from 'react-router-dom';
 import AllContent from './components/allContent/AllContent';
-import Cards from './components/Cards';
+import Cards from './components/cards/Cards';
 
 
 
 function App(props) {
+
+  let route = props.catalog.map(item =>{
+    return(
+      <Route path={"/catalog/"+item.id} render={()=> <Cards items={item.items}/>}/>
+    )
+  })
   return (
     <BrowserRouter>
       <div className="App">
@@ -16,7 +22,7 @@ function App(props) {
         <div className="wrap">
           <LeftNavBar catalog={props.catalog}/>
           <Route path='/home' component={AllContent}/>
-          <Route path='/catalog' render={()=> <Cards items={props.catalog}/>}/>
+          {route}
         </div>
       </div>
     </BrowserRouter>
