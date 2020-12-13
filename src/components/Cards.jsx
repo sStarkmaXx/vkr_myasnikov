@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { Card, Button } from 'react-bootstrap';
-import './Cards.module.css';
+import classes from './Cards.module.css';
 
 
 
@@ -9,6 +9,8 @@ let smartphones = [
   { id: 2, name: "Iphone", img: "https://c.dns-shop.ru/thumb/st1/fit/0/0/e65262ea3fddec2515058af9f59de60f/c42fd815f01316f4da0f2266e0906e7961e45f46dbcdc7062836dbdb2facbfcd.jpg", price: "39999" },
   { id: 3, name: "Honor", img: "https://c.dns-shop.ru/thumb/st1/fit/wm/2000/2000/88b11e329301688fc7a60ee5b0b21cc6/5836230fc1f930dcfc615dfdc67efa79f5cee5580290a950e63f89d4d4bb8afd.jpg", price: "31999" },
   { id: 4, name: "Meizu", img: "https://c.dns-shop.ru/thumb/st1/fit/0/0/1813fddbc0ef4697af32d1a52cac7b48/efd11002f85862c7598fc59e44916c4e54d73c41a067fc0af5f316f384307608.jpg", price: "12999" },
+  { id: 5, name: "Xiaomi", img: "https://c.dns-shop.ru/thumb/st4/fit/0/0/e1703d8a884b56daa326acb0f5ca3213/1d6fef168f87210f975e1407520aafac8845d2364045ae8cec918031f82b9051.jpg", price: "32999" },
+  { id: 5, name: "Xiaomi", img: "https://c.dns-shop.ru/thumb/st4/fit/0/0/e1703d8a884b56daa326acb0f5ca3213/1d6fef168f87210f975e1407520aafac8845d2364045ae8cec918031f82b9051.jpg", price: "32999" },
   { id: 5, name: "Xiaomi", img: "https://c.dns-shop.ru/thumb/st4/fit/0/0/e1703d8a884b56daa326acb0f5ca3213/1d6fef168f87210f975e1407520aafac8845d2364045ae8cec918031f82b9051.jpg", price: "32999" }
 ];
 let computers = [
@@ -48,7 +50,7 @@ const Cards = () => {
   );
 
   return (
-    <div className="app-cards" style={{display:"flex", "flex-direction":"row" , "flex-wrap":"wrap"}}>
+    <div className={classes.appCards}>
       {cardElements}
     </div>
   );
