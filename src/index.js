@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -50,10 +50,17 @@ let catalog = [{ id: "appliances", name: "Бытовая техника", items:
 { id: "tools", name: "Инструменты", items: tools },
 ];
 
+let currentItemInfo ={img:"",name:"",price:""};
+let addCurrentInfo = (img,name,price)=>{
+  currentItemInfo.img=img;
+  currentItemInfo.name=name;
+  currentItemInfo.price=price;
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App catalog={catalog}/>
+    <App catalog={catalog} addII={addCurrentInfo} curentInfo={currentItemInfo}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
