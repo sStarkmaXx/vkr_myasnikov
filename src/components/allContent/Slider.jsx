@@ -2,7 +2,7 @@ import { React } from 'react';
 import { Carousel,Col } from 'react-bootstrap';
 
 
-const Slider = () => {
+const Slider = (props) => {
   return (
     <div className="App-slider">
       
@@ -10,7 +10,7 @@ const Slider = () => {
           <Carousel.Item style={{ height: 200 }}>
             <img
               className="d-block w-100"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScGA0NCsv4Nxcx8eDaMW8ABIWj3NJS0YqE-g&usqp=CAU"
+              src={props.img}
               alt="First slide"
             />
             <Carousel.Caption>

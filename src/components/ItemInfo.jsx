@@ -10,7 +10,7 @@ const ItemInfo = (props) => {
 
   return (
     <div className="itemInfo">
-      <Slider />
+      <Slider img={props.img}/>
       <Card style={{ width: '18rem' }}>
         <ListGroup variant="flush">
           <ListGroup.Item>{props.name}</ListGroup.Item>
