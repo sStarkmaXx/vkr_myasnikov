@@ -10,11 +10,30 @@ import { Provider } from 'react-redux';
 
 
 function App(props) {
-  let route = props.state.catalog.catalog.map(item => {
+  debugger;
+  let cards = props.state.catalog.map(item => {
     return (
-      <Route path={"/catalog/" + item.url} render={() => <Cards items={item.items} />} />
+      <Route path={"/catalog/" + item.category} render={() => <Cards item={item} itemInfo={itemInfo}/>} />
     )
   })
+
+  function itemInfo(category,id) {
+    let action = {type: "SELECT_ITEM",
+                  id: {id},
+                  category: {category}}
+    props.dispatch(action);
+  }
+
+  function itemInfoRender(selectItem){
+    if(selectItem.name==""){
+      return cards;
+    }else{
+      return(
+        <ItemInfo img={selectItem.img} name={selectItem.name} price={selectItem.price} />
+      )
+    }
+  }
+
   return (
   
       <BrowserRouter>
@@ -23,8 +42,8 @@ function App(props) {
           <div className="wrap">
             <LeftNavBar catalog={props.state.catalog.catalog} />
             <Route path='/home' component={AllContent} />
-            <Route path='/catalog/itemInfo' render={() => <ItemInfo img={props.curentInfo.img} name={props.curentInfo.name} price={props.curentInfo.price} />} />
-            {route}
+            {itemInfoRender(props.state.selectItem)}
+            
           </div>
         </div>
       </BrowserRouter>
