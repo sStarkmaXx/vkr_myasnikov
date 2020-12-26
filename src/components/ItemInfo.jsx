@@ -10,23 +10,21 @@ const ItemInfo = (props) => {
 
   return (
     <div className="itemInfo">
-      <Slider img={props.img}/>
+      <img src={props.img}/>
       <Card style={{ width: '18rem' }}>
         <ListGroup variant="flush">
           <ListGroup.Item>{props.name}</ListGroup.Item>
-          <ListGroup.Item>{props.price}</ListGroup.Item>
-          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+          <ListGroup.Item>Цена: {props.price} рублей</ListGroup.Item>
         </ListGroup>
       </Card>
       <Form>
         <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Example textarea</Form.Label>
+          <Form.Label>Оставить коментарий</Form.Label>
           <Form.Control as="textarea" rows={3} />
         </Form.Group>
-        <Button variant="info" type="submit">
-          Submit
-         </Button>
+        <Button variant="info" type="submit">Отправить</Button>
       </Form>
+      
     </div>
   );
 }

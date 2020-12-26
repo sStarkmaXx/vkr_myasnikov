@@ -7,7 +7,7 @@ import NavBarItem from './NavBarItem';
 
 
 const LeftNavBar = (props) => {
-
+  
   let navBarItem = props.catalog.map(item => {
     return (
         <NavBarItem id={item.id} name={item.name}></NavBarItem>
@@ -19,7 +19,6 @@ const LeftNavBar = (props) => {
       <Navbar bg="light" variant="light">
         <Nav className="flex-column" style={{ padding: 20 }}>
           {navBarItem}
-          <NavLink to="#">Услуги</NavLink>
         </Nav>
       </Navbar>
     </div>
