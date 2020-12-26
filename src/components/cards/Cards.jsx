@@ -4,22 +4,8 @@ import classes from './Cards.module.css';
 import { NavLink } from 'react-router-dom';
 
 
+
 const Cards = (props) => {
-<<<<<<< Updated upstream
-  let cardElements = props.items.map(item => {
-    props.addII(item.img, item.name, item.price);
-    return (
-      <Card style={{ width: 200 }}>
-        <Card.Img variant="top" src={item.img} />
-        <Card.Body>
-          <Card.Title>{item.name}</Card.Title>
-          <Card.Text>
-            <h3>{item.price}</h3>
-          </Card.Text>
-          <Button variant="info"> <NavLink to="itemInfo">Подробнее</NavLink></Button>
-        </Card.Body>
-      </Card>
-=======
   
   let cardElements = props.item.items.map(item => {
     let path = props.item.category + "/" + item.id;
@@ -48,7 +34,6 @@ const Cards = (props) => {
           </Card.Body>
         </Card>
       </div>
->>>>>>> Stashed changes
     );
   }
   );

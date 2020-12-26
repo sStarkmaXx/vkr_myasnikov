@@ -6,28 +6,9 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import AllContent from './components/allContent/AllContent';
 import Cards from './components/cards/Cards';
 import ItemInfo from './components/ItemInfo';
+import { Provider } from 'react-redux';
 
 
-<<<<<<< Updated upstream
-
-
-function App(props) {
-
-  let route = props.catalog.map(item =>{
-    return(
-      <Route path={"/catalog/"+item.id} render={()=> <Cards items={item.items} addII={props.addII}/>}/>
-    )
-  })
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <div className="wrap">
-          <LeftNavBar catalog={props.catalog}/>
-          <Route path='/home' component={AllContent}/>
-          <Route path='/catalog/itemInfo' render={()=> <ItemInfo img={props.curentInfo.img} name={props.curentInfo.name} price={props.curentInfo.price}/>}/>
-          {route}
-=======
 function App(props) {
   
   let cards = props.store.state.catalog.map(item => {
@@ -47,10 +28,9 @@ function App(props) {
             <Route path='/itemInfo' render={()=> <ItemInfo img={props.store.selectItem.img} name={props.store.selectItem.name} price={props.store.selectItem.price} />} />
             {cards}
           </div>
->>>>>>> Stashed changes
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+   
   );
 }
 

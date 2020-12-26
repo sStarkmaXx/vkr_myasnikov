@@ -10,7 +10,7 @@ const LeftNavBar = (props) => {
   
   let navBarItem = props.catalog.map(item => {
     return (
-        <NavBarItem id={item.id} name={item.name}></NavBarItem>
+        <NavBarItem id={item.category} name={item.name}></NavBarItem>
       );
     }
   );
