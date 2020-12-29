@@ -2,19 +2,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { React } from 'react';
 import { Form, Card, Button, ListGroup } from 'react-bootstrap';
 import './ItemInfo.module.css';
-import Slider from './allContent/Slider';
 
 
 
 const ItemInfo = (props) => {
-
+  debugger;
   return (
     <div className="itemInfo">
-      <img src={props.img}/>
+      <img src={props.selectItem.img}/>
       <Card style={{ width: '18rem' }}>
         <ListGroup variant="flush">
-          <ListGroup.Item>{props.name}</ListGroup.Item>
-          <ListGroup.Item>Цена: {props.price} рублей</ListGroup.Item>
+          <ListGroup.Item>{props.selectItem.name}</ListGroup.Item>
+          <ListGroup.Item>Цена: {props.selectItem.price} рублей</ListGroup.Item>
         </ListGroup>
       </Card>
       <Form>

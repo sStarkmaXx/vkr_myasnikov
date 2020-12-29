@@ -4,10 +4,12 @@ import classes from './NavBarItem.module.css';
 
 
 
-const NavBarItem = (props) =>{
-  let path = "/catalog/"+ props.id;
-  return(
+const NavBarItem = (props) => {
+  let path = "/catalog/" + props.id;
+  return (
+    <div className={classes.NavBarItem}>
       <NavLink to={path} activeClassName={classes.activeLink}>{props.name}</NavLink>
+    </div>
   )
 }
 

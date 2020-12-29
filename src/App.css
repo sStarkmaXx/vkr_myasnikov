@@ -1,5 +1,26 @@
-.wrap{
+body, html{ 
+    width: 100%;
+    height: 100%;
+}
+#root{
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    min-height: 100%;
+}
+.App{
+    min-height: 100%;
+    display: grid;
     background-color:rgb(226, 226, 226);
+    grid-template-rows: 120px 1fr 100px;
+    grid-template-columns: 300px 1fr;
+}
+.HeadCont{
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+.FootCont{
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+.NavBarCont{
+    min-height: 100%;
 }

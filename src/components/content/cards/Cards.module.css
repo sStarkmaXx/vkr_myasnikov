@@ -1,0 +1,51 @@
+.Cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.Card{
+    display: grid;
+    justify-items: center;
+    width: 300px;
+    height: 500px;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    border:2px solid darkgrey;
+    border-radius: 5px;
+}
+
+.image{
+    height: 300px;
+    width: 280px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.name{
+    height: 70px;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}
+.price{
+    display: flex;
+    height: 70px;
+    font-size: larger;
+    font-weight: bold;
+    align-items: flex-end;
+}
+.link{
+    display: grid;
+    height: 40px;
+    width: 150px;
+    justify-items: center;
+    align-items: center;
+    background-color: #17a2b8;
+    border-radius: 3px;
+}
+.link a{
+    color: white;
+}
