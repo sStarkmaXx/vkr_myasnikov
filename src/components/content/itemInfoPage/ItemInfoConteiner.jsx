@@ -10,13 +10,13 @@ import ItemInfo from './ItemInfo';
 
 
 const itemInfoContainer = () => {
-  debugger;
+  
   return (
     <div className="itemInfoContainer">
       <StoreContext.Consumer>
         {(store) => {
           return (
-            <ItemInfo selectItem={store.selectItem}/>
+            <ItemInfo selectItem={store.selectItem} posts={store.state.posts}/>
           )
         }
         }

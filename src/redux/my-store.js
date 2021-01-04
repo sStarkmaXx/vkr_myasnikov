@@ -73,12 +73,72 @@ let mystore = {
                     { id: 5, name: "Перфоратор Denzel RH-750-24", img: "https://c.dns-shop.ru/thumb/st1/fit/500/500/d2b6e454121ca0cd196d41f599613e57/2df44c15037cd623efc5fe2c7129cff802cef50fa0b1db516923149a9513ac87.jpg", price: "5 399" }
                 ]
             }
-        ]
+        ],
+        posts:{
+            appliances:{
+                1:[{img:"", name:"", message:""}],
+                2:[{img:"", name:"", message:""}],
+                3:[{img:"", name:"", message:""}],
+                4:[{img:"", name:"", message:""}],
+                5:[{img:"", name:"", message:""}]
+            },
+            smartphones:{
+                1:[{img:"https://www.meme-arsenal.com/memes/fd51570fb8df5c3bde2532971bf8df80.jpg", name:"Max", message:"Дивайс супер!"}],
+                2:[{img:"", name:"", message:""}],
+                3:[{img:"", name:"", message:""}],
+                4:[{img:"", name:"", message:""}],
+                5:[{img:"", name:"", message:""}]
+            },
+            tv:{
+                1:[{img:"", name:"", message:""}],
+                2:[{img:"", name:"", message:""}],
+                3:[{img:"", name:"", message:""}],
+                4:[{img:"", name:"", message:""}],
+                5:[{img:"", name:"", message:""}]
+            },
+            computers:{
+                1:[{img:"", name:"", message:""}],
+                2:[{img:"", name:"", message:""}],
+                3:[{img:"", name:"", message:""}],
+                4:[{img:"", name:"", message:""}],
+                5:[{img:"", name:"", message:""}]
+            },
+            office:{
+                1:[{img:"", name:"", message:""}],
+                2:[{img:"", name:"", message:""}],
+                3:[{img:"", name:"", message:""}],
+                4:[{img:"", name:"", message:""}],
+                5:[{img:"", name:"", message:""}]
+            },
+            accessories:{
+                1:[{img:"", name:"", message:""}],
+                2:[{img:"", name:"", message:""}],
+                3:[{img:"", name:"", message:""}],
+                4:[{img:"", name:"", message:""}],
+                5:[{img:"", name:"", message:""}]
+            },
+            cargoods:{
+                1:[{img:"", name:"", message:""}],
+                2:[{img:"", name:"", message:""}],
+                3:[{img:"", name:"", message:""}],
+                4:[{img:"", name:"", message:""}],
+                5:[{img:"", name:"", message:""}]
+            },
+            tools:{
+                1:[{img:"", name:"", message:""}],
+                2:[{img:"", name:"", message:""}],
+                3:[{img:"", name:"", message:""}],
+                4:[{img:"", name:"", message:""}],
+                5:[{img:"", name:"", message:""}]
+            }
+        }
     },
-    selectItem: { img: "", name: "", price: "" },
+    selectItem: {category:"", id:"", img: "", name: "", price: "" },
     dispatch(action) {
         
         if (action.type === "SELECT_ITEM") {
+            this.selectItem.category = action.category;
+            this.selectItem.id = action.id
             for (let i = 0; i < this.state.catalog.length; i++) {
                 if (this.state.catalog[i].category === action.category) {
                     for (let j = 0; j < this.state.catalog[i].items.length; j++) {
