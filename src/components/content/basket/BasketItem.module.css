@@ -79,16 +79,10 @@
   border-color: #17a2b8;
 }
 .input{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 4px;
   border: 1px solid #ddd;
-    display: inline-block;
-    height: 38px;
-    text-align: center;
-    vertical-align: center;
-    width: calc(100% / 3);
-    border-left: none;
-    border-right: none;
-    font-size: 14px;
-    line-height: 33px;
-    -webkit-appearance: none;
-    border-radius: 0;
+  border-radius: 2px;
 }

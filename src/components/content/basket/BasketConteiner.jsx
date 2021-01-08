@@ -15,7 +15,7 @@ const BasketConteiner = () => {
         {(store) => {
           let bascetItem = store.state.basket.map(item => {
             return (
-              <Route path="/basket" render={() => <BasketItem item={item}/>} />
+              <Route path="/basket" render={() => <BasketItem item={item} dispatch={store.dispatch.bind(store)}/>} />
             )
           })
           return (
