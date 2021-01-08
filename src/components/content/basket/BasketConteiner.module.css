@@ -1,0 +1,4 @@
+.basketConteiner{
+  display: grid;
+  grid-column: 1/4;
+}

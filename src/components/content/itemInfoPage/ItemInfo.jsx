@@ -6,7 +6,7 @@ import Post from './Post';
 
 
 const ItemInfo = (props) => {
-
+  let selectItem = props.selectItem;
   let url = 'url(' + props.selectItem.img + ')';
   let category = props.selectItem.category;
   let id = props.selectItem.id;
@@ -26,7 +26,7 @@ const ItemInfo = (props) => {
 
 let newPostElement = React.createRef();
 
-let dispatcher = () => {
+let addPost = () => {
   let text = newPostElement.current.value;
   let action = {
     type: "ADD_POST",
@@ -39,15 +39,23 @@ let dispatcher = () => {
   props.dispatch(action)
 }
 
+let addItemInBasket = () => {
+  let action = {
+    type: "ADD_ITEM_IN_BASKET",
+    item: selectItem
+  }
+  props.dispatch(action)
+}
+
 return (
   <div className={classes.itemInfo}>
     <div className={classes.img} style={{ backgroundImage: url }}></div>
     <div className={classes.name}>{props.selectItem.name}</div>
     <div className={classes.price}>Цена: {props.selectItem.price} рублей</div>
-    <div className={classes.button}><Button variant="info" type="submit">Добавить в корзину</Button></div>
+    <div className={classes.button}><Button onClick={addItemInBasket}variant="info" type="submit">Добавить в корзину</Button></div>
     <div className={classes.form}>Оставить отзыв
       <textarea className={classes.textarea} ref={newPostElement} cols="10" rows="4" placeholder="Ваш отзыв"></textarea>
-      <Button onClick={dispatcher} variant="info" type="submit" style={{ width: 200, justifySelf: "center" }}>Отправить</Button>
+      <Button onClick={addPost} variant="info" type="submit" style={{ width: 200, justifySelf: "center" }}>Отправить</Button>
     </div>
     {posts}
   </div>

@@ -133,7 +133,8 @@ let mystore = {
                 4:[{img:"", name:"", message:""}],
                 5:[{img:"", name:"", message:""}]
             }
-        }
+        },
+        basket:[],
     },
     selectItem: {category:"", id:"", img: "", name: "", price: "" },
     dispatch(action) {
@@ -155,9 +156,19 @@ let mystore = {
             }
         }
         if (action.type === "ADD_POST"){
-            //let catygoryObj = this.state.posts[action.category];
             this.state.posts[action.category][action.id].push({img: action.userImg, name: action.userName, message: action.message});
             renderEntireTree();
+        }
+        if (action.type === "ADD_ITEM_IN_BASKET"){
+            for (let i = 0; i < this.state.catalog.length; i++) {
+                if (this.state.catalog[i].category === action.item.category) {
+                    for (let j = 0; j < this.state.catalog[i].items.length; j++) {
+                        if (this.state.catalog[i].items[j].id === action.item.id) {
+                            this.state.basket.push(this.state.catalog[i].items[j])
+                        }
+                    }
+                }
+            }
         }
     }
 }

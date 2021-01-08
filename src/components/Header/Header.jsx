@@ -38,8 +38,7 @@ const Header = () => {
             </Form>
             <Nav className="mr-auto">
               <Nav.Link href="#">Сравнить</Nav.Link>
-              <Nav.Link href="#">Избранное</Nav.Link>
-              <Nav.Link href="#">Корзина</Nav.Link>
+              <NavLink to="/basket" className="nav-link">Корзина</NavLink>
               <Button variant="info">Войти</Button>
             </Nav>
           </Navbar>

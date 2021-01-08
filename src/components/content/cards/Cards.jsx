@@ -19,12 +19,12 @@ const Cards = (props) => {
       }
       props.dispatch(action)
     }
-    let img = "url("+item.img+")";
+    let url = "url("+item.img+")";
     
 
     return (
       <div  className={classes.Card} onMouseOver={dispatcher}>
-          <div className={classes.image} style={{backgroundImage:img}}></div>
+          <div className={classes.image} style={{backgroundImage:url}}></div>
           <div className={classes.name}>{item.name}</div>
           <div className={classes.price}>Цена: {item.price}</div>
           <div className={classes.link}>
