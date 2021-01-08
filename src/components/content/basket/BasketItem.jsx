@@ -24,6 +24,14 @@ const BasketItem = (props) => {
     props.dispatch(action)
   }
 
+  let del = () =>{
+    let action = {
+      type: "ITEM_DEL",
+      id:itemId
+    }
+    props.dispatch(action)
+  }
+
   let summ = props.item.count*props.item.price;
 
   return (
@@ -34,7 +42,7 @@ const BasketItem = (props) => {
         <button className={classes.minus} onClick={minus}>-</button>
         <div className={classes.input}>{props.item.count}</div>
         <button className={classes.plus} onClick={plus}>+</button>
-        <button className={classes.del}>Удалить</button>
+        <button className={classes.del} onClick={del}>Удалить</button>
       </div>
       <div className={classes.price}>Цена {summ}</div>
     </div>

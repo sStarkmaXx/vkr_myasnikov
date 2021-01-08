@@ -192,6 +192,10 @@ let mystore = {
                 renderEntireTree();
             }
         }
+        if (action.type === "ITEM_DEL"){
+            delete this.state.basket[action.id];
+            renderEntireTree();
+        }
     }
 }
 
