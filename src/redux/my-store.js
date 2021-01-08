@@ -1,3 +1,5 @@
+import renderEntireTree from "../render";
+
 let mystore = {
     state: {
         catalog: [
@@ -151,6 +153,11 @@ let mystore = {
                     }
                 }
             }
+        }
+        if (action.type === "ADD_POST"){
+            //let catygoryObj = this.state.posts[action.category];
+            this.state.posts[action.category][action.id].push({img: action.userImg, name: action.userName, message: action.message});
+            renderEntireTree();
         }
     }
 }

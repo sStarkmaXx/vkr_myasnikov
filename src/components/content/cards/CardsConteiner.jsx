@@ -2,6 +2,8 @@ import { React } from 'react';
 import StoreContext from '../../StoreContext';
 import { Route } from 'react-router-dom';
 import Cards from './Cards';
+import classes from './CardsConteiner.module.css';
+
 
 
 
@@ -9,7 +11,7 @@ import Cards from './Cards';
 const CardsConteiner = () => {
 
   return (
-    <div>
+    <div className={classes.cards}>
       <StoreContext.Consumer>
         {(store) => {
           let cards = store.state.catalog.map(item => {

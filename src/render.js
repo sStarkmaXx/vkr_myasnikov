@@ -7,12 +7,26 @@ import mystore from './redux/my-store';
 import { BrowserRouter } from 'react-router-dom';
 import StoreContext from './components/StoreContext';
 //import store from './redux/store'
-import renderEntireTree from "./render";
 
-renderEntireTree();
+
+let renderEntireTree = () => {
+
+  ReactDOM.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <StoreContext.Provider value={mystore}>
+          <App />
+        </StoreContext.Provider>
+      </BrowserRouter>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
 
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+export default renderEntireTree;
