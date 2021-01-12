@@ -1,0 +1,45 @@
+.login{
+    height: 400px;
+    width: 300px;
+    display: grid;
+    background-color:white;
+    border: 3px solid grey;
+    border-radius: 20px;
+    grid-template-rows: 50px 350px;
+    justify-self: center;
+    align-self: center;
+}
+.form{
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+}
+.input{
+    display: grid;
+    height: 60px;
+    width: 250px;
+    align-self: center;
+    justify-self: center;
+    border-radius: 5px;
+}
+.btn{
+    display: grid;
+    height: 50px;
+    width: 200px;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+}
+.title{
+    display: grid;
+    grid-template-columns: 240px 40px;
+    align-content: center;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+}
+.close{
+    display: grid;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-weight:normal;
+}

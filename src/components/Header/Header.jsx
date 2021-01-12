@@ -1,9 +1,10 @@
 import { React } from 'react';
 import { Row, Col, Nav, Navbar, NavDropdown, Form, Button, FormControl } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import LoginConteiner from '../login/LoginConteiner';
 
+const Header = (props) => {
 
-const Header = () => {
   return (
     <div className="App-header">
       <Row>
@@ -39,7 +40,7 @@ const Header = () => {
             <Nav className="mr-auto">
               <Nav.Link href="#">Сравнить</Nav.Link>
               <NavLink to="/basket" className="nav-link">Корзина</NavLink>
-              <Button variant="info">Войти</Button>
+              <Button variant="info" onClick={props.login}>Войти</Button>
             </Nav>
           </Navbar>
         </Col>

@@ -1,10 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Route} from 'react-router-dom';
 import HeaderConteiner from './components/Header/HeaderConteiner'
 import ContentConteiner from './components/content/ContentConteiner';
 import NavBarConteiner from './components/NavBar/NavBarConteiner';
 import FooterConteiner from './components/footer/FooterComteiner';
+import LoginConteiner from './components/login/LoginConteiner';
+import React from 'react';
+
 
 
 function App(props) {
@@ -14,11 +16,20 @@ function App(props) {
       <Route path={"/catalog/" + item.category} render={() => <Cards item={item} dispatch={props.dispatch} />} />
     )
   })*/
+  let loginElement = React.createRef();
+  
+  let renderLogin = () =>{
+    loginElement.current.style.display = "grid";
+  }
+
+  let hideLogin = () =>{
+    loginElement.current.style.display = "none";
+  }
 
   return (
     <div className="App">
       <div className="HeadCont">
-      <HeaderConteiner/>
+      <HeaderConteiner login={renderLogin}/>
       </div>
       <div className="NavBarCont">
       <NavBarConteiner/>
@@ -28,6 +39,9 @@ function App(props) {
       </div>
       <div className="FootCont">
       <FooterConteiner/>
+      </div>
+      <div ref={loginElement} className="loginCont">
+      <LoginConteiner close={hideLogin}/>
       </div>
     </div>
   );
