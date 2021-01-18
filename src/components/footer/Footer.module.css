@@ -1,0 +1,27 @@
+.footer{
+    display: grid;
+    height: 60px;
+    background-color: #343a40;
+    grid-template-columns: 150px 150px 200px 150px 1fr 200px;
+    align-content: center;
+}
+.number{
+    display: grid;
+    grid-column: 6/7;
+    align-content: center;
+    justify-content: center;
+    color: white;
+}
+.footer a{
+    display: grid;
+    justify-self: center;
+}
+.shops{
+    display: grid;
+    background-color: rgb(151, 151, 151);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    border: 2px solid white;
+    color: white;
+}

@@ -28,6 +28,7 @@ function App(props) {
 
   return (
     <div className="App">
+      <div className="underHead"></div>
       <div className="HeadCont">
       <HeaderConteiner login={renderLogin}/>
       </div>
