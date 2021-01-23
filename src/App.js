@@ -17,32 +17,34 @@ function App(props) {
     )
   })*/
   let loginElement = React.createRef();
-  
-  let renderLogin = () =>{
+
+  let renderLogin = () => {
     loginElement.current.style.display = "grid";
   }
 
-  let hideLogin = () =>{
+  let hideLogin = () => {
     loginElement.current.style.display = "none";
   }
 
   return (
     <div className="App">
       <div className="underHead"></div>
-      <div className="HeadCont">
-      <HeaderConteiner login={renderLogin}/>
+      <div className="headCont">
+        <HeaderConteiner login={renderLogin} />
       </div>
-      <div className="NavBarCont">
-      <NavBarConteiner/>
-      </div>
-      <div className="ContCont">
-      <ContentConteiner/>
+      <div className="wrapCont">
+        <div className="NavBarCont">
+          <NavBarConteiner />
+        </div>
+        <div className="ContCont">
+          <ContentConteiner />
+        </div>
       </div>
       <div className="FootCont">
-      <FooterConteiner/>
+        <FooterConteiner />
       </div>
       <div ref={loginElement} className="loginCont">
-      <LoginConteiner close={hideLogin}/>
+        <LoginConteiner close={hideLogin} />
       </div>
     </div>
   );
