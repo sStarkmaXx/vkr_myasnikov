@@ -12,8 +12,6 @@
   grid-row: 2/3;
   background-color: #19caaf;
   border-top-right-radius: 3px;
-  align-content: center;
-  justify-content: center;
 }
 .basket:hover{
   display: grid;
@@ -21,8 +19,25 @@
   grid-row: 2/3;
   background-color: #24ffdb;
   border-top-right-radius: 3px;
+}
+.countItems{
+  display: grid;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #2f2f2f;
+  position: relative;
+  right: -103px;
+  top:-15px;
+  color: #fff;
   align-content: center;
   justify-content: center;
+  
+}
+.link{
+  position: relative;
+  top:-16px;
+  right:-30px;
 }
 .btn{
   display: grid;
