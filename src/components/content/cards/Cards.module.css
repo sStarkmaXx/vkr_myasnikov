@@ -8,7 +8,7 @@
     display: grid;
     justify-items: center;
     width: 297px;
-    height: 500px;
+    height: 530px;
     border: 1px solid #888;
     margin-right: 10px;
     margin-top: 10px;
@@ -25,20 +25,23 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    border-bottom: 1px solid #d9d9d9;
 }
 .name{
-    height: 70px;
+    height: 100px;
     font-size: larger;
     font-weight: bold;
     text-align: center;
     padding: 5px;
+    border-bottom: 1px solid #d9d9d9;
 }
 .price{
-    display: flex;
+    display: grid;
     height: 70px;
     font-size: larger;
     font-weight: bold;
-    align-items: flex-end;
+    align-content: center;
+    justify-content: center;
 }
 .link{
     display: grid;

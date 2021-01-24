@@ -39,12 +39,12 @@ const BasketItem = (props) => {
       <div className={classes.img} style={{backgroundImage:url}}></div>
       <div className={classes.name}>{props.item.name}</div>
       <div className={classes.count}>
-        <button className={classes.minus} onClick={minus}>-</button>
+        <div className={classes.minus} onClick={minus}>-</div>
         <div className={classes.input}>{props.item.count}</div>
-        <button className={classes.plus} onClick={plus}>+</button>
-        <button className={classes.del} onClick={del}>Удалить</button>
+        <div className={classes.plus} onClick={plus}>+</div>
+        <div className={classes.del} onClick={del}>Удалить</div>
       </div>
-      <div className={classes.price}>Цена {summ}</div>
+      <div className={classes.price}>Цена: {summ} ₽</div>
     </div>
   );
 }

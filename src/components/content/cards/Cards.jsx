@@ -26,7 +26,7 @@ const Cards = (props) => {
       <div  className={classes.Card} onMouseOver={dispatcher}>
           <div className={classes.image} style={{backgroundImage:url}}></div>
           <div className={classes.name}>{item.name}</div>
-          <div className={classes.price}>Цена: {item.price}</div>
+          <div className={classes.price}>Цена: {item.price} ₽</div>
           <div className={classes.link}>
           <NavLink to="/itemInfo" >Подробнее</NavLink>
           </div>

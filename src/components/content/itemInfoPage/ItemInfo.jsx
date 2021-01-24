@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import classes from './ItemInfo.module.css';
 import Post from './Post';
+import { NavLink } from 'react-router-dom';
 
 
 const ItemInfo = (props) => {
@@ -13,53 +14,66 @@ const ItemInfo = (props) => {
   let categoryObj = props.posts[category];
 
   let posts = categoryObj[id].map(item => {
-    
+
     if (item.message === "") {
       return;
-      }else{
-        return (
-          <Post userImg={item.img} userName={item.name} message={item.message} />
-          )  
-      }
+    } else {
+      return (
+        <Post userImg={item.img} userName={item.name} message={item.message} />
+      )
     }
+  }
   )
 
-let newPostElement = React.createRef();
+  let newPostElement = React.createRef();
 
-let addPost = () => {
-  let text = newPostElement.current.value;
-  let action = {
-    type: "ADD_POST",
-    category: category,
-    id: id,
-    message: text,
-    userImg: "https://www.meme-arsenal.com/memes/fd51570fb8df5c3bde2532971bf8df80.jpg",
-    userName: "User Name"
+  let addPost = () => {
+    let text = newPostElement.current.value;
+    let action = {
+      type: "ADD_POST",
+      category: category,
+      id: id,
+      message: text,
+      userImg: "https://www.meme-arsenal.com/memes/fd51570fb8df5c3bde2532971bf8df80.jpg",
+      userName: "User Name"
+    }
+    props.dispatch(action)
   }
-  props.dispatch(action)
-}
 
-let addItemInBasket = () => {
-  let action = {
-    type: "ADD_ITEM_IN_BASKET",
-    item: selectItem
+  let addItemInBasket = () => {
+    let action = {
+      type: "ADD_ITEM_IN_BASKET",
+      item: selectItem
+    }
+    props.dispatch(action);
+    basketBtn.current.style.display = "grid";
+    addInBascBtn.current.style.display = "none";
   }
-  props.dispatch(action)
-}
 
-return (
-  <div className={classes.itemInfo}>
-    <div className={classes.img} style={{ backgroundImage: url }}></div>
-    <div className={classes.name}>{props.selectItem.name}</div>
-    <div className={classes.price}>Цена: {props.selectItem.price} рублей</div>
-    <div className={classes.button}><Button onClick={addItemInBasket}variant="info" type="submit">Добавить в корзину</Button></div>
-    <div className={classes.form}>Оставить отзыв
-      <textarea className={classes.textarea} ref={newPostElement} cols="10" rows="4" placeholder="Ваш отзыв"></textarea>
-      <Button onClick={addPost} variant="info" type="submit" style={{ width: 200, justifySelf: "center" }}>Отправить</Button>
+  let addInBascBtn = React.createRef();
+  let basketBtn = React.createRef();
+
+  return (
+    <div className={classes.itemPage}>
+      <div className={classes.itemInfo}>
+        <div className={classes.img} style={{ backgroundImage: url }}></div>
+        <div className={classes.name}><h1>{props.selectItem.name}</h1></div>
+        <div className={classes.price}>Цена: {props.selectItem.price} ₽</div>
+        <div className={classes.info}><p><h2>Описание</h2></p>{props.selectItem.info}</div>
+        <div className={classes.btns}>
+          <div ref={addInBascBtn} className={classes.button} onClick={addItemInBasket}>Добавить в корзину</div>
+          <div ref={basketBtn}className={classes.basket}>
+            <NavLink to="/basket">Корзина</NavLink>
+          </div>
+        </div>
+        <div className={classes.form}>Оставить отзыв
+        <textarea className={classes.textarea} ref={newPostElement} cols="10" rows="4" placeholder="Ваш отзыв"></textarea>
+          <div className={classes.button} onClick={addPost}>Отправить</div>
+        </div>
+      </div>
+      {posts}
     </div>
-    {posts}
-  </div>
-);
+  );
 }
 
 export default ItemInfo;
