@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import classes from './ItemInfo.module.css';
 import Post from './Post';
 import { NavLink } from 'react-router-dom';
+import { render } from '@testing-library/react';
 
 
 const ItemInfo = (props) => {
@@ -46,12 +47,31 @@ const ItemInfo = (props) => {
       item: selectItem
     }
     props.dispatch(action);
-    basketBtn.current.style.display = "grid";
-    addInBascBtn.current.style.display = "none";
+    
   }
 
-  let addInBascBtn = React.createRef();
-  let basketBtn = React.createRef();
+
+  let buttone;
+  let BtnAddInBask = () => {
+    return (
+      <div className={classes.button} onClick={addItemInBasket}>Добавить в корзину</div>
+    )
+  }
+
+  let BtnBasket = () => {
+    return (
+      <div className={classes.basket}>
+        <NavLink to="/basket">Корзина</NavLink>
+      </div>
+    )
+  }
+
+
+  if (!props.selectItem.inBasket) {
+    buttone = <BtnAddInBask/> 
+    } else {
+      buttone = <BtnBasket/> 
+    }
 
   return (
     <div className={classes.itemPage}>
@@ -61,10 +81,7 @@ const ItemInfo = (props) => {
         <div className={classes.price}>Цена: {props.selectItem.price} ₽</div>
         <div className={classes.info}><p><h2>Описание</h2></p>{props.selectItem.info}</div>
         <div className={classes.btns}>
-          <div ref={addInBascBtn} className={classes.button} onClick={addItemInBasket}>Добавить в корзину</div>
-          <div ref={basketBtn}className={classes.basket}>
-            <NavLink to="/basket">Корзина</NavLink>
-          </div>
+          {buttone}
         </div>
         <div className={classes.form}>Оставить отзыв
         <textarea className={classes.textarea} ref={newPostElement} cols="10" rows="4" placeholder="Ваш отзыв"></textarea>

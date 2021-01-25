@@ -5,10 +5,24 @@ import imgBasket from '../../pics/basket/iconmonstr-shopping-cart-2-24.png';
 
 const Header = (props) => {
 
-  let countItems = React.createRef();
-  let addCount = ()=>{
-    countItems.current = "2";
+  let count = React.createRef();
+  let DivCount = () => {
+    return (
+      <div className={classes.countItems}>{props.itemCount}</div>
+    )
   }
+
+  /*if(props.itemCount>0){
+    count = <DivCount/>
+  }*/
+  /*let divCount = () => {
+    count.current.style.visibility = "visible";
+  }
+
+  if (props.itemCount != 0) {
+    divCount();
+  }*/
+
 
   return (
     <div className={classes.appHeader}>
@@ -24,13 +38,15 @@ const Header = (props) => {
         <NavLink to="/delivery" activeClassName={classes.activeLink}>Доставка</NavLink>
         <NavLink to="/payment" activeClassName={classes.activeLink}>Способы оплаты</NavLink>
       </div>
-      <div className={classes.basket} onClick={addCount}>
-        <div ref={countItems} className={classes.countItems}>0</div>
+      <div className={classes.basket}>
+        <div ref={count} className={classes.countItems}>{props.itemCount}</div>
         <NavLink to="/basket" className={classes.link}>Корзина</NavLink>
       </div>
       <div onClick={props.login} className={classes.btn}>Войти</div>
     </div>
   );
+
+
 }
 
 export default Header;

@@ -6,12 +6,13 @@ import classes from './BasketItem.module.css';
 
 
 const BasketItem = (props) => {
+
   let url = "url("+props.item.img+")";
-  let itemId = props.item.id;
+  let idInBasket = props.item.idInBasket;
   let plus = () =>{
     let action = {
       type: "ITEM_COUNT_PLUS",
-      id:itemId
+      idInBasket: idInBasket
     }
     props.dispatch(action)
   }
@@ -19,7 +20,7 @@ const BasketItem = (props) => {
   let minus = () =>{
     let action = {
       type: "ITEM_COUNT_MINUS",
-      id:itemId
+      idInBasket: idInBasket
     }
     props.dispatch(action)
   }
@@ -27,7 +28,11 @@ const BasketItem = (props) => {
   let del = () =>{
     let action = {
       type: "ITEM_DEL",
-      id:itemId
+      idInBasket: idInBasket,
+      count: props.item.count,
+      inBasket: props.item.inBasket,
+      placeInCatalog: props.item.placeInCatalog,
+      itemId: props.item.itemId
     }
     props.dispatch(action)
   }
