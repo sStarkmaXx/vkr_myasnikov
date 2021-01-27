@@ -176,6 +176,7 @@ let mystore = {
                             this.state.totalItemCount+=1;
                             this.state.catalog[i].items[j].inBasket=true;
                             this.selectItem.inBasket=true;
+                            this.state.totalsumm+=this.state.catalog[i].items[j].price;
                             renderEntireTree();
                         }
                     }
@@ -185,6 +186,7 @@ let mystore = {
         if (action.type === "ITEM_COUNT_PLUS"){
             this.state.basket[action.idInBasket].count+=1;
             this.state.totalItemCount+=1;
+            this.state.totalsumm+=this.state.catalog[action.placeInCatalog].items[action.itemId].price;
             renderEntireTree();
         }
         if (action.type === "ITEM_COUNT_MINUS"){
@@ -192,6 +194,7 @@ let mystore = {
             if (this.state.basket[action.idInBasket].count>1){
                 this.state.basket[action.idInBasket].count-=1;
                 this.state.totalItemCount-=1;
+                this.state.totalsumm-=this.state.catalog[action.placeInCatalog].items[action.itemId].price;
                 renderEntireTree();
             }
         }
@@ -199,7 +202,9 @@ let mystore = {
             debugger;
             this.state.totalItemCount-=action.count;
             this.state.catalog[action.placeInCatalog].items[action.itemId].inBasket = false;
+            //this.state.basket.splice(action.idInBasket,1);
             delete this.state.basket[action.idInBasket];
+            this.state.totalsumm= this.state.totalsumm-action.count*this.state.catalog[action.placeInCatalog].items[action.itemId].price;
             renderEntireTree();
         }
     }

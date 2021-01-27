@@ -46,3 +46,9 @@ body, html{
     display: grid;
     grid-column: 3/4;
 }
+.FootCont{
+    display: grid;
+    height: 50px;
+    width: 100%;
+    background-color: #f2f2f2;
+}

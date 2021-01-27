@@ -12,7 +12,9 @@ const BasketItem = (props) => {
   let plus = () =>{
     let action = {
       type: "ITEM_COUNT_PLUS",
-      idInBasket: idInBasket
+      idInBasket: idInBasket,
+      placeInCatalog: props.item.placeInCatalog,
+      itemId: props.item.itemId
     }
     props.dispatch(action)
   }
@@ -20,7 +22,9 @@ const BasketItem = (props) => {
   let minus = () =>{
     let action = {
       type: "ITEM_COUNT_MINUS",
-      idInBasket: idInBasket
+      idInBasket: idInBasket,
+      placeInCatalog: props.item.placeInCatalog,
+      itemId: props.item.itemId
     }
     props.dispatch(action)
   }
