@@ -3,8 +3,8 @@
     width: 300px;
     display: grid;
     background-color:white;
-    border: 3px solid grey;
-    border-radius: 20px;
+    border: 1px solid #333;
+    border-radius: 2px;
     grid-template-rows: 50px 350px;
     justify-self: center;
     align-self: center;
@@ -19,7 +19,8 @@
     width: 250px;
     align-self: center;
     justify-self: center;
-    border-radius: 5px;
+    border-radius: 2px;
+    border: 1px solid #888;
 }
 .btn{
     display: grid;
@@ -28,6 +29,13 @@
     align-self: center;
     justify-self: center;
     align-content: center;
+    justify-content: center;
+    background-color: #19caaf;
+    border-radius: 2px;
+    color: #fff;
+}
+.btn:hover{
+    background-color: #24ffdb;
 }
 .title{
     display: grid;
@@ -38,6 +46,11 @@
     font-size: x-large;
     font-weight: bolder;
 }
+.name{
+    display: grid;
+    position: relative;
+    right: -18px;
+}
 .close{
     display: grid;
     justify-self: center;
@@ -47,9 +60,11 @@
     padding-bottom: 8px;
     height: 30px;
     width: 30px;
-    border: 2px solid grey;
-    border-radius: 10px;
+    border: 1px solid #888;
+    border-radius: 2px;
     font-weight:normal;
-    background-color: rgb(148, 147, 147);
-    color: white;
+    background-color: #19caaf;
+}
+.close:hover{
+    background-color: #24ffdb;
 }

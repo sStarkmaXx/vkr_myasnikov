@@ -1,7 +1,5 @@
 .footer{
     display: grid;
-    height: 60px;
-    background-color: #343a40;
     grid-template-columns: 150px 150px 200px 150px 1fr 200px;
     align-content: center;
 }
@@ -10,11 +8,12 @@
     grid-column: 6/7;
     align-content: center;
     justify-content: center;
-    color: white;
+    color:#888;
 }
 .footer a{
     display: grid;
     justify-self: center;
+    color: #888;
 }
 .shops{
     display: grid;

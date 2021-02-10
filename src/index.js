@@ -1,11 +1,5 @@
-import React, { createElement } from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import mystore from './redux/my-store';
-import { BrowserRouter } from 'react-router-dom';
-import StoreContext from './components/StoreContext';
 //import store from './redux/store'
 import renderEntireTree from "./render";
 

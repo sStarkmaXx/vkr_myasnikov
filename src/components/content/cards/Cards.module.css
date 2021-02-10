@@ -7,13 +7,16 @@
 .Card{
     display: grid;
     justify-items: center;
-    width: 300px;
-    height: 500px;
-    margin: 5px;
-    padding: 5px;
-    background-color: rgb(255, 255, 255);
-    border:2px solid darkgrey;
-    border-radius: 5px;
+    width: 297px;
+    height: 530px;
+    border: 1px solid #888;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.Card:hover{
+    background-color:  #f2f2f2;
+    box-shadow: 3px 3px 4px 2px #888;
 }
 
 .image{
@@ -22,20 +25,23 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    border-bottom: 1px solid #d9d9d9;
 }
 .name{
-    height: 70px;
+    height: 100px;
     font-size: larger;
     font-weight: bold;
     text-align: center;
     padding: 5px;
+    border-bottom: 1px solid #d9d9d9;
 }
 .price{
-    display: flex;
+    display: grid;
     height: 70px;
     font-size: larger;
     font-weight: bold;
-    align-items: flex-end;
+    align-content: center;
+    justify-content: center;
 }
 .link{
     display: grid;
@@ -43,9 +49,21 @@
     width: 150px;
     justify-items: center;
     align-items: center;
-    background-color: #17a2b8;
-    border-radius: 3px;
+    background-color: #19caaf;
+    border-radius: 2px;
+}
+.link:hover{
+    display: grid;
+    height: 40px;
+    width: 150px;
+    justify-items: center;
+    align-items: center;
+    background-color: #24ffdb;
+    border-radius: 2px;
 }
 .link a{
-    color: white;
+    color: #fff;
+}
+.link a:hover{
+    color: #fff;
 }

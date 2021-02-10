@@ -1,17 +1,22 @@
 .basketItem{
   height: 150px;
-  margin-top: 5px;
+  margin-top: 10px;
   display: grid;
   background: white;
-  grid-template-columns: 100px 1fr 150px 200px;
-  border: 2px solid grey;
-  border-radius: 5px;
+  grid-template-columns: 150px 1fr 150px 200px;
+  border: 1px solid #888;
+  border-radius: 2px;
+}
+.basketItem:hover{
+  background-color:  #f2f2f2;
+  box-shadow: 3px 3px 4px 2px #888;
 }
 .img{
   display: grid;
   align-self: center;
   height: 140px;
   width: 140px;
+  margin-left: 10px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -39,44 +44,43 @@
 }
 .del{
   grid-column: 1/4;
-  display: inline-block;
-  margin: 3px;
+  display: grid;
+  margin: 2px;
   font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: .25rem;
+  align-content: center;
+  justify-content: center;
+  border-radius: 2px;
   color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+  background-color:  #19caaf;
 }
-.del :hover{
-  color: #fff;
-  background-color: #138496;
-  border-color: #117a8b;
+.del:hover{
+  background-color: #24ffdb;
 }
 .minus{
-  margin: 3px;
-  display: inline-block;
-  margin: 3px;
+  display: grid;
+  margin: 2px;
   font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: .25rem;
+  align-content: center;
+  justify-content: center;
+  border-radius: 2px;
   color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+  background-color:  #19caaf;
+}
+.minus:hover{
+  background-color: #24ffdb;
 }
 .plus{
-  margin: 3px;
-  display: inline-block;
-  margin: 3px;
+  display: grid;
+  margin: 2px;
   font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: .25rem;
+  align-content: center;
+  justify-content: center;
+  border-radius: 2px;
   color: #fff;
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+  background-color:  #19caaf;
+}
+.plus:hover{
+  background-color: #24ffdb;
 }
 .input{
   display: grid;

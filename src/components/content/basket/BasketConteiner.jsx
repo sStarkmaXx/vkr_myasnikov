@@ -18,9 +18,15 @@ const BasketConteiner = () => {
               <Route path="/basket" render={() => <BasketItem item={item} dispatch={store.dispatch.bind(store)}/>} />
             )
           })
+          /*if(store.state.basket.length==0){
+            return(
+              <div className={classes.basketEmpty}>Корзина пуста.</div>
+            )
+          }else{*/
           return (
             <div>
               {bascetItem}
+              <div className={classes.totalBasket}>В корзине {store.state.totalItemCount} элемент(ов) на общую сумму {store.state.totalsumm} ₽.</div>
             </div>
           )
         }
