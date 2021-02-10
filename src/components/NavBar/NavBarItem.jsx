@@ -5,7 +5,9 @@ import classes from './NavBarItem.module.css';
 
 
 const NavBarItem = (props) => {
-  let path = "/catalog/" + props.id;
+  
+  let path = "/catalog/" + props.category;
+
   return (
     <div className={classes.NavBarItem}>
       <NavLink to={path} activeClassName={classes.activeLink}>{props.name}</NavLink>

@@ -1,10 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import classes from './ItemInfo.module.css';
 import Post from './Post';
 import { NavLink } from 'react-router-dom';
-import { render } from '@testing-library/react';
 
 
 const ItemInfo = (props) => {
@@ -13,7 +11,6 @@ const ItemInfo = (props) => {
   let category = props.selectItem.category;
   let id = props.selectItem.id;
   let categoryObj = props.posts[category];
-
   let posts = categoryObj[id].map(item => {
 
     if (item.message === "") {

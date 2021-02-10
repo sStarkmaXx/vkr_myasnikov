@@ -7,7 +7,8 @@ import { NavLink } from 'react-router-dom';
 const Cards = (props) => {
 
   let cardElements = props.item.items.map(item => {
-    let path = props.item.category + "/" + item.id;
+    let path = `/catalog/${props.item.category}/${item.id}`;
+    
     let category = props.item.category;
     let id = item.id;
 
@@ -15,10 +16,12 @@ const Cards = (props) => {
       let action = {
         type: "SELECT_ITEM",
         category: category,
-        id: id
+        id: id,
+        path:path
       }
       props.dispatch(action)
     }
+    
     let url = "url("+item.img+")";
     
 
@@ -28,7 +31,7 @@ const Cards = (props) => {
           <div className={classes.name}>{item.name}</div>
           <div className={classes.price}>Цена: {item.price} ₽</div>
           <div className={classes.link}>
-          <NavLink to="/itemInfo" >Подробнее</NavLink>
+          <NavLink to={path}>Подробнее</NavLink>
           </div>
       </div >
     );

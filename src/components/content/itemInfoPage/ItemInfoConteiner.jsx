@@ -1,6 +1,4 @@
 import { React } from 'react';
-import { bindActionCreators } from 'redux';
-import { select } from '../../../actions/action';
 import StoreContext from '../../StoreContext';
 import ItemInfo from './ItemInfo';
 import classes from './ItemInfoConteiner.module.css';

@@ -139,7 +139,9 @@ let mystore = {
         totalItemCount:0
     },
     selectItem: {category:"", id:"", img: "", name: "", price: "",info:"",inBasket:false},
+    path:"",
     dispatch(action) {
+        
         if (action.type === "SELECT_ITEM") {
             this.selectItem.category = action.category;
             this.selectItem.id = action.id
@@ -158,6 +160,7 @@ let mystore = {
                 }
             }
         }
+      
         if (action.type === "ADD_POST"){
             this.state.posts[action.category][action.id].push({img: action.userImg, name: action.userName, message: action.message});
             renderEntireTree();
@@ -202,7 +205,6 @@ let mystore = {
             debugger;
             this.state.totalItemCount-=action.count;
             this.state.catalog[action.placeInCatalog].items[action.itemId].inBasket = false;
-            //this.state.basket.splice(action.idInBasket,1);
             delete this.state.basket[action.idInBasket];
             this.state.totalsumm= this.state.totalsumm-action.count*this.state.catalog[action.placeInCatalog].items[action.itemId].price;
             renderEntireTree();
