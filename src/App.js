@@ -1,4 +1,5 @@
 import './App.css';
+<<<<<<< Updated upstream
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
 import LeftNavBar from './components/NavBar/LeftNavBar';
@@ -22,6 +23,25 @@ function App(props) {
                   id: {id},
                   category: {category}}
     props.dispatch(action);
+=======
+import HeaderConteiner from './components/Header/HeaderConteiner'
+import ContentConteiner from './components/content/ContentConteiner';
+import NavBarConteiner from './components/NavBar/NavBarConteiner';
+import FooterConteiner from './components/footer/FooterComteiner';
+import LoginConteiner from './components/login/LoginConteiner';
+import React from 'react';
+import StoreContext from './components/StoreContext';
+
+
+
+
+function App() {
+
+  let loginElement = React.createRef();
+
+  let renderLogin = () => {
+    loginElement.current.style.display = "grid";
+>>>>>>> Stashed changes
   }
 
   function itemInfoRender(selectItem){
@@ -35,6 +55,7 @@ function App(props) {
   }
 
   return (
+<<<<<<< Updated upstream
   
       <BrowserRouter>
         <div className="App">
@@ -48,6 +69,38 @@ function App(props) {
         </div>
       </BrowserRouter>
    
+=======
+    <div>
+      <StoreContext.Consumer>
+        {
+          (store) => {
+            return (
+              <div className="App">
+                <div className="underHead"></div>
+                <div className="headCont">
+                  <HeaderConteiner login={renderLogin} />
+                </div>
+                <div className="wrapCont">
+                  <div className="NavBarCont">
+                    <NavBarConteiner />
+                  </div>
+                  <div className="ContCont">
+                    <ContentConteiner catalog = {store.getState().cardsPage.catalog}/>
+                  </div>
+                </div>
+                <div className="FootCont">
+                  <FooterConteiner />
+                </div>
+                <div ref={loginElement} className="loginCont">
+                  <LoginConteiner close={hideLogin} />
+                </div>
+              </div>
+            )
+          }
+        }
+      </StoreContext.Consumer>
+    </div>
+>>>>>>> Stashed changes
   );
 }
 
