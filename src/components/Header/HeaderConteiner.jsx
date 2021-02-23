@@ -8,11 +8,7 @@ const HeaderConteiner = (props) => {
     <StoreContext.Consumer>
       {(store) => {
         return (
-<<<<<<< HEAD
-          <Header login={props.login} itemCount={store.getState().basket.basket.totalItemCount}/>
-=======
-          <Header login={props.login} itemCount={store.state.totalItemCount}/>
->>>>>>> f5b23fc0401ea08ba1ea7be03155b1c19bb48f51
+          <Header login={props.login} itemCount={store.getState().basket.basket.totalItemCount} />
         )
       }
       }

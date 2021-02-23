@@ -14,12 +14,8 @@ import Refund from '../footer/Refund';
 const ContentConteiner = (props) => {
 
     let generateRoute = props.catalog.map(el => {
-<<<<<<< HEAD
         
         let category = el.id;
-=======
-        let category = el.category;
->>>>>>> f5b23fc0401ea08ba1ea7be03155b1c19bb48f51
         return (el.items.map(item => {
             let id = item.id;
             let path = `/catalog/${category}/${id}`;

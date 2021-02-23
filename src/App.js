@@ -38,11 +38,7 @@ function App() {
                     <NavBarConteiner />
                   </div>
                   <div className="ContCont">
-<<<<<<< HEAD
                     <ContentConteiner catalog = {store.getState().catalog}/>
-=======
-                    <ContentConteiner catalog = {store.state.catalog}/>
->>>>>>> f5b23fc0401ea08ba1ea7be03155b1c19bb48f51
                   </div>
                 </div>
                 <div className="FootCont">
