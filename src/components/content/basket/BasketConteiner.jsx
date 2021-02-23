@@ -13,14 +13,15 @@ const BasketConteiner = () => {
     <div className={classes.basketConteiner}>
       <StoreContext.Consumer>
         {(store) => {
-          let bascetItem = store.state.basket.map(item => {
+          let bascetItem = store.getState().basket.basket.basket.map(item => {
             return (
-              <Route path="/basket" render={() => <BasketItem item={item} dispatch={store.dispatch.bind(store)}/>} />
+              <Route path="/basket" render={() => <BasketItem item={item} dispatch={store.dispatch}/>} />
             )
           })
           return (
             <div>
               {bascetItem}
+              <div className={classes.totalBasket}>В корзине {store.getState().basket.basket.totalItemCount} элемент(ов) на общую сумму {store.getState().basket.basket.totalsumm} ₽.</div>
             </div>
           )
         }

@@ -1,35 +1,28 @@
 import { React } from 'react';
 import classes from './BasketItem.module.css';
-
+import {delActionCreater, plusActionCreater, minusActionCreater} from '../../../redux/reducers/basketItem-reducer';
 
 
 
 
 const BasketItem = (props) => {
+
   let url = "url("+props.item.img+")";
-  let itemId = props.item.id;
+  let idInBasket = props.item.idInBasket;
+  let placeInCatalog = props.item.placeInCatalog;
+  let itemId = props.item.itemId-1;
+  let count = props.item.count;
+  
   let plus = () =>{
-    let action = {
-      type: "ITEM_COUNT_PLUS",
-      id:itemId
-    }
-    props.dispatch(action)
+    props.dispatch(plusActionCreater(idInBasket,placeInCatalog,itemId))
   }
 
   let minus = () =>{
-    let action = {
-      type: "ITEM_COUNT_MINUS",
-      id:itemId
-    }
-    props.dispatch(action)
+    props.dispatch(minusActionCreater(idInBasket,placeInCatalog,itemId,))
   }
 
   let del = () =>{
-    let action = {
-      type: "ITEM_DEL",
-      id:itemId
-    }
-    props.dispatch(action)
+    props.dispatch(delActionCreater(idInBasket,count,placeInCatalog,itemId))
   }
 
   let summ = props.item.count*props.item.price;
@@ -39,12 +32,12 @@ const BasketItem = (props) => {
       <div className={classes.img} style={{backgroundImage:url}}></div>
       <div className={classes.name}>{props.item.name}</div>
       <div className={classes.count}>
-        <button className={classes.minus} onClick={minus}>-</button>
-        <div className={classes.input}>{props.item.count}</div>
-        <button className={classes.plus} onClick={plus}>+</button>
-        <button className={classes.del} onClick={del}>Удалить</button>
+        <div className={classes.minus} onClick={minus}>-</div>
+        <div className={classes.input}>{count}</div>
+        <div className={classes.plus} onClick={plus}>+</div>
+        <div className={classes.del} onClick={del}>Удалить</div>
       </div>
-      <div className={classes.price}>Цена {summ}</div>
+      <div className={classes.price}>Цена: {summ} ₽</div>
     </div>
   );
 }

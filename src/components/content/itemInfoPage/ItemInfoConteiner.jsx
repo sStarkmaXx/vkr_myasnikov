@@ -1,23 +1,44 @@
 import { React } from 'react';
-import { bindActionCreators } from 'redux';
-import { select } from '../../../actions/action';
 import StoreContext from '../../StoreContext';
 import ItemInfo from './ItemInfo';
 import classes from './ItemInfoConteiner.module.css';
-
-/*function matchDispatchToProps(dispatch) {
-  return bindActionCreators({ select }, dispatch)
-}*/
+import { addPostActionCreater } from '../../../redux/reducers/posts-reducer';
+import { addItemInBasketActionCreater} from '../../../redux/reducers/basketItem-reducer';
+import { connect } from 'react-redux';
 
 
 const itemInfoContainer = () => {
-  
+
   return (
     <div className={classes.itemInfoContainer}>
       <StoreContext.Consumer>
         {(store) => {
+          let params = window.location.href.split('/');
+          let idInCatalog = params[4]-1;
+          let idInItems = params[5]-1;
+          let category = store.getState().basket.catalog[idInCatalog].category;
+          let item = store.getState().basket.catalog[idInCatalog].items[idInItems];
+          let posts = store.getState().posts[category][params[5]];
+          let inBasket = store.getState().basket.catalog[idInCatalog].items[idInItems].inBasket;
+          
+          
+          
+          let addPost = (category, id, text) => {
+            store.dispatch(addPostActionCreater(category, id, text))
+          }
+          let addItemInBasket = (selectItem, idInCatalog) => {
+            store.dispatch(addItemInBasketActionCreater(selectItem, idInCatalog))
+          }
+
           return (
-            <ItemInfo selectItem={store.selectItem} posts={store.state.posts} dispatch={store.dispatch.bind(store)}/>
+            <ItemInfo addPost={addPost}
+                      addItemInBasket={addItemInBasket}
+                      item={item}
+                      category={category}
+                      posts={posts}
+                      inBasket={inBasket}
+                      idInCatalog={idInCatalog}
+                      idInItems={params[5]} />
           )
         }
         }
@@ -25,5 +46,25 @@ const itemInfoContainer = () => {
     </div>
   );
 }
+
+/*let mapStateToProps = (state) =>{
+  return {
+    selectItem: state.getState().itemInfoPage.selectItem,
+    catalog: state.getState().itemInfoPage.catalog,
+    posts: state.getState().itemInfoPage.posts
+  }
+}
+
+let mapDispatchToProps = (dispatch) =>{
+  return {
+    addPost: (category, id, text)=>{
+      dispatch(addPostActionCreater(category, id, text))
+    },
+    addItemInBasket: (selectItem, idInCatalog)=> {
+      dispatch(addItemInBasketActionCreater(selectItem, idInCatalog))
+    }
+  }
+}
+const itemInfoContainer = connect(mapStateToProps,mapDispatchToProps)(ItemInfo);*/
 
 export default itemInfoContainer;

@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React from 'react';
 import ItemInfoConteiner from './itemInfoPage/ItemInfoConteiner';
 import CardsConteiner from './cards/CardsConteiner'
 import { Route } from 'react-router-dom';
@@ -11,11 +11,26 @@ import Refund from '../footer/Refund';
 
 
 
-const ContentConteiner = () => {
+const ContentConteiner = (props) => {
+
+    let generateRoute = props.catalog.map(el => {
+        
+        let category = el.id;
+        return (el.items.map(item => {
+            let id = item.id;
+            let path = `/catalog/${category}/${id}`;
+            return (
+                <div>
+                    <Route path={path} component={() => <ItemInfoConteiner />} />
+                </div>
+            )
+            })
+        )
+    })
 
     return (
         <div>
-            <Route path='/itemInfo' component={() => <ItemInfoConteiner />} />
+            {generateRoute}
             <Route path='/catalog' component={() => <CardsConteiner />} />
             <Route path='/basket' component={() => <BasketConteiner />} />
             <Route path='/shops' component={() => <Shops />} />
@@ -23,6 +38,7 @@ const ContentConteiner = () => {
             <Route path='/payment' component={() => <Payment />} />
         </div>
     );
+
 }
 
 export default ContentConteiner;

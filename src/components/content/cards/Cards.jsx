@@ -5,30 +5,27 @@ import { NavLink } from 'react-router-dom';
 
 
 const Cards = (props) => {
-
   let cardElements = props.item.items.map(item => {
-    let path = props.item.category + "/" + item.id;
+    let path = `/catalog/${props.item.id}/${item.id}`;
+    
     let category = props.item.category;
     let id = item.id;
 
-    let dispatcher = () => {
-      let action = {
-        type: "SELECT_ITEM",
-        category: category,
-        id: id
-      }
-      props.dispatch(action)
-    }
+    /*let dispatcher = () => {
+     
+      props.dispatch(selectItemActionCreater(category,id,path))
+    }*/
+    
     let url = "url("+item.img+")";
     
 
     return (
-      <div  className={classes.Card} onMouseOver={dispatcher}>
+      <div  className={classes.Card}>
           <div className={classes.image} style={{backgroundImage:url}}></div>
           <div className={classes.name}>{item.name}</div>
-          <div className={classes.price}>Цена: {item.price}</div>
+          <div className={classes.price}>Цена: {item.price} ₽</div>
           <div className={classes.link}>
-          <NavLink to="/itemInfo" >Подробнее</NavLink>
+          <NavLink to={path}>Подробнее</NavLink>
           </div>
       </div >
     );

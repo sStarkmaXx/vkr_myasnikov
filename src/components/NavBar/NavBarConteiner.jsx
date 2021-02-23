@@ -10,7 +10,7 @@ const NavBarConteiner = () => {
         {
           (store) => {
             return (
-              <NavBarr catalog={store.state.catalog} />
+              <NavBarr catalog={store.getState().catalog}/>
             )
           }
         }

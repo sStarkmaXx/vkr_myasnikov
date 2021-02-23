@@ -1,9 +1,3 @@
 .itemInfoContainer{
   display: grid;
-  background-color: rgb(151, 151, 151);
-  padding: 10px;
-  border-radius: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border: 2px solid white;
 }
