@@ -21,8 +21,6 @@ const itemInfoContainer = () => {
           let posts = store.getState().posts[category][params[5]];
           let inBasket = store.getState().basket.catalog[idInCatalog].items[idInItems].inBasket;
           
-          
-          
           let addPost = (category, id, text) => {
             store.dispatch(addPostActionCreater(category, id, text))
           }
@@ -47,11 +45,18 @@ const itemInfoContainer = () => {
   );
 }
 
-/*let mapStateToProps = (state) =>{
+/* let mapStateToProps = (state) =>{
+  let params = window.location.href.split('/');
+  let idInCatalog = params[4]-1;
+  let idInItems = params[5]-1;
+  let category = state.getState().basket.catalog[idInCatalog].category;
   return {
-    selectItem: state.getState().itemInfoPage.selectItem,
-    catalog: state.getState().itemInfoPage.catalog,
-    posts: state.getState().itemInfoPage.posts
+    item: state.getState().basket.catalog[idInCatalog].items[idInItems],
+    category: category,
+    posts: state.getState().posts[category][params[5]],
+    inBasket: state.getState().basket.catalog[idInCatalog].items[idInItems].inBasket,
+    idInCatalog: idInCatalog,
+    idInItems: idInItems
   }
 }
 

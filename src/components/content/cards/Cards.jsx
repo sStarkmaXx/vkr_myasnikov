@@ -7,17 +7,7 @@ import { NavLink } from 'react-router-dom';
 const Cards = (props) => {
   let cardElements = props.item.items.map(item => {
     let path = `/catalog/${props.item.id}/${item.id}`;
-    
-    let category = props.item.category;
-    let id = item.id;
-
-    /*let dispatcher = () => {
-     
-      props.dispatch(selectItemActionCreater(category,id,path))
-    }*/
-    
-    let url = "url("+item.img+")";
-    
+    let url = `url(${item.img})`;
 
     return (
       <div  className={classes.Card}>

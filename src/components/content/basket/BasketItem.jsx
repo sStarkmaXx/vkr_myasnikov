@@ -7,22 +7,22 @@ import {delActionCreater, plusActionCreater, minusActionCreater} from '../../../
 
 const BasketItem = (props) => {
 
-  let url = "url("+props.item.img+")";
+  let url = `url(${props.item.img})`;
   let idInBasket = props.item.idInBasket;
   let placeInCatalog = props.item.placeInCatalog;
   let itemId = props.item.itemId-1;
   let count = props.item.count;
   
   let plus = () =>{
-    props.dispatch(plusActionCreater(idInBasket,placeInCatalog,itemId))
+    props.plus(idInBasket,placeInCatalog,itemId);
   }
 
   let minus = () =>{
-    props.dispatch(minusActionCreater(idInBasket,placeInCatalog,itemId,))
+    props.minus(idInBasket,placeInCatalog,itemId);
   }
 
   let del = () =>{
-    props.dispatch(delActionCreater(idInBasket,count,placeInCatalog,itemId))
+    props.del(idInBasket,count,placeInCatalog,itemId);
   }
 
   let summ = props.item.count*props.item.price;
