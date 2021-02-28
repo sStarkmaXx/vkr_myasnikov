@@ -1,0 +1,18 @@
+.basketConteiner{
+  display: grid;
+  grid-column: 1/4;
+}
+.basketEmpty{
+  text-align: center;
+  margin-top: 10px;
+  color: #888;
+  font-size: larger;
+  font-weight:bolder;
+}
+.totalBasket{
+  text-align: center;
+  margin-top: 10px;
+  color: #333;
+  font-size: larger;
+  font-weight:bolder;
+}

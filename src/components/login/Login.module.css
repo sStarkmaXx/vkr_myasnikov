@@ -1,0 +1,70 @@
+.login{
+    height: 400px;
+    width: 300px;
+    display: grid;
+    background-color:white;
+    border: 1px solid #333;
+    border-radius: 2px;
+    grid-template-rows: 50px 350px;
+    justify-self: center;
+    align-self: center;
+}
+.form{
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+}
+.input{
+    display: grid;
+    height: 60px;
+    width: 250px;
+    align-self: center;
+    justify-self: center;
+    border-radius: 2px;
+    border: 1px solid #888;
+}
+.btn{
+    display: grid;
+    height: 50px;
+    width: 200px;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+    justify-content: center;
+    background-color: #19caaf;
+    border-radius: 2px;
+    color: #fff;
+}
+.btn:hover{
+    background-color: #24ffdb;
+}
+.title{
+    display: grid;
+    grid-template-columns: 240px 40px;
+    padding-left: 10px;
+    align-content: center;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+}
+.name{
+    display: grid;
+    position: relative;
+    right: -18px;
+}
+.close{
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 8px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    font-weight:normal;
+    background-color: #19caaf;
+}
+.close:hover{
+    background-color: #24ffdb;
+}

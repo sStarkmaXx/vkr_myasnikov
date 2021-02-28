@@ -1,0 +1,127 @@
+.appHeader{
+  display: grid;
+  width: 1152px;
+  justify-self: center;
+  height: 150px;
+  grid-template-rows: 100px 50px;
+  grid-template-columns: 200px 40px 1fr 1fr 1fr 100px 120px;
+}
+.basket{
+  display: grid;
+  grid-column: 7/8;
+  grid-row: 2/3;
+  background-color: #19caaf;
+  border-top-right-radius: 3px;
+}
+.basket:hover{
+  display: grid;
+  grid-column: 7/8;
+  grid-row: 2/3;
+  background-color: #24ffdb;
+  border-top-right-radius: 3px;
+}
+.countItems{
+  display: grid;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #2f2f2f;
+  position: relative;
+  right: -103px;
+  top:-15px;
+  color: #fff;
+  align-content: center;
+  justify-content: center;
+}
+.link{
+  position: relative;
+  top:-16px;
+  right:-30px;
+}
+.btn{
+  display: grid;
+  height: 40px;
+  width: 80px;
+  grid-column: 6/7;
+  grid-row: 2/3;
+  align-content: center;
+  align-self: center;
+  color: #fff;
+}
+.btn:hover{
+  color: #24ffdb;
+}
+.logo{
+  display: grid;
+  height: 120px;
+  width: 200px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  background-image: url("../../pics/logo/logo.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.number{
+  display: grid;
+  grid-column: 6/8;
+  align-content: center;
+  justify-content: center;
+  color: #2f2f2f;
+  font-size: 21px;
+  font-weight: 500;
+}
+.search{
+  display: grid;
+  height: 50px;
+  width: 600px;
+  justify-content: center;
+  align-content: center;
+  align-self:center ;
+  justify-self: center;
+  grid-column: 3/6;
+  grid-row: 1/2;
+  grid-template-columns: 3fr 1fr;
+}
+.btnSearch{
+  background-color: #19caaf;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #fff;
+  border: none;
+}
+.categories{
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  align-content: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #19caaf;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.different{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-column: 3/7;
+  grid-row: 2/3;
+  background-color: #2f2f2f;
+  border-top-left-radius: 3px;
+  align-content: center;
+  text-align: center;
+}
+.appHeader a{
+  color: #fff;
+}
+.appHeader a:hover{
+  color: #19caaf;
+}
+.appHeader a.activeLink{
+  color: #19caaf;
+}
+.basket:hover a{
+  color: #fff;
+}

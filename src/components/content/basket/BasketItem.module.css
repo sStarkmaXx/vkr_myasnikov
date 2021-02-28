@@ -1,0 +1,92 @@
+.basketItem{
+  height: 150px;
+  margin-top: 10px;
+  display: grid;
+  background: white;
+  grid-template-columns: 150px 1fr 150px 200px;
+  border: 1px solid #888;
+  border-radius: 2px;
+}
+.basketItem:hover{
+  background-color:  #f2f2f2;
+  box-shadow: 3px 3px 4px 2px #888;
+}
+.img{
+  display: grid;
+  align-self: center;
+  height: 140px;
+  width: 140px;
+  margin-left: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.name{
+  display: grid;
+  align-content: center;
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+}
+.price{
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  font-size: larger;
+  font-weight: bold;
+  align-items: flex-end;
+}
+.count{
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  grid-template-rows: 1fr 1fr;
+}
+.del{
+  grid-column: 1/4;
+  display: grid;
+  margin: 2px;
+  font-weight: 400;
+  align-content: center;
+  justify-content: center;
+  border-radius: 2px;
+  color: #fff;
+  background-color:  #19caaf;
+}
+.del:hover{
+  background-color: #24ffdb;
+}
+.minus{
+  display: grid;
+  margin: 2px;
+  font-weight: 400;
+  align-content: center;
+  justify-content: center;
+  border-radius: 2px;
+  color: #fff;
+  background-color:  #19caaf;
+}
+.minus:hover{
+  background-color: #24ffdb;
+}
+.plus{
+  display: grid;
+  margin: 2px;
+  font-weight: 400;
+  align-content: center;
+  justify-content: center;
+  border-radius: 2px;
+  color: #fff;
+  background-color:  #19caaf;
+}
+.plus:hover{
+  background-color: #24ffdb;
+}
+.input{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 4px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
